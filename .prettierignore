@@ -1,0 +1,8 @@
+dist/
+build/
+artifacts/
+.cache/
+src/generated/
+src/resources/
+LICENSE
+package-lock.json

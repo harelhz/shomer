@@ -1,0 +1,1 @@
+/* Shomer: neutered resource */

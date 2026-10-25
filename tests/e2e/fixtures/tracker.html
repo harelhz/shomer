@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Site embedding a tracker</title>
+  </head>
+  <body>
+    <img id="px" alt="" src="http://tracker.test:{{PORT}}/media/photo.gif" />
+    <script>
+      window.pixel = new Promise((resolve) => {
+        const img = document.getElementById('px');
+        if (img.complete) resolve(img.naturalWidth > 0 ? 'loaded' : 'failed');
+        img.onload = () => resolve('loaded');
+        img.onerror = () => resolve('failed');
+      });
+    </script>
+  </body>
+</html>

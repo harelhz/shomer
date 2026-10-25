@@ -1,0 +1,58 @@
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 16px 0 8px;
+}
+
+.lead {
+  font-size: 17px;
+  color: var(--text-2);
+  margin: 0 0 32px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  text-align: left;
+  margin: 24px 0 32px;
+}
+
+.features article,
+.permission {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.features h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.features p {
+  margin: 0;
+  color: var(--text-2);
+}
+
+.permission {
+  border-color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.permission h2 {
+  margin-top: 0;
+}
+
+.permission .btn {
+  font-size: 15px;
+  padding: 10px 18px;
+}

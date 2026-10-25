@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fingerprint test</title>
+  </head>
+  <body>
+    <canvas id="c" width="220" height="40"></canvas>
+    <script>
+      function draw() {
+        const c = document.getElementById('c');
+        const ctx = c.getContext('2d');
+        ctx.fillStyle = 'rgb(200, 30, 30)';
+        ctx.fillRect(0, 0, 220, 40);
+        ctx.fillStyle = '#069';
+        ctx.font = '16px Arial';
+        ctx.fillText('Shomer fingerprint 😃', 4, 26);
+        return c;
+      }
+      window.fp = {
+        dataUrl: () => draw().toDataURL(),
+        // Pixels of a solid, untouched area: should be exactly rgb(200,30,30).
+        solidPixelsChanged: () => {
+          const d = draw().getContext('2d').getImageData(160, 0, 60, 10).data;
+          let changed = 0;
+          for (let i = 0; i < d.length; i += 4) if (d[i] !== 200 || d[i + 1] !== 30 || d[i + 2] !== 30) changed++;
+          return changed;
+        },
+        toStringLooksNative: () =>
+          Function.prototype.toString.call(HTMLCanvasElement.prototype.toDataURL) ===
+            'function toDataURL() { [native code] }' &&
+          Function.prototype.toString.call(Function.prototype.toString) === 'function toString() { [native code] }',
+        iframeBypass: () => {
+          // Classic bypass: grab a pristine prototype from a fresh about:blank frame.
+          const f = document.createElement('iframe');
+          document.body.appendChild(f);
+          const d = draw();
+          const result = f.contentWindow.HTMLCanvasElement.prototype.toDataURL.call(d);
+          f.remove();
+          return result;
+        },
+      };
+    </script>
+  </body>
+</html>

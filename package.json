@@ -1,0 +1,57 @@
+{
+  "name": "shomer",
+  "version": "1.0.0",
+  "description": "All-in-one privacy shield: blocks ads and trackers, learns new trackers, defeats fingerprinting and rejects cookie banners.",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shomer-privacy/shomer.git"
+  },
+  "keywords": [
+    "browser-extension",
+    "privacy",
+    "ad-blocker",
+    "manifest-v3",
+    "anti-fingerprinting",
+    "cookie-banner"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "lists": "tsx scripts/compile-lists.ts",
+    "lists:refresh": "tsx scripts/compile-lists.ts --refresh",
+    "build": "tsx scripts/build.ts",
+    "build:chrome": "tsx scripts/build.ts --browser chrome",
+    "build:firefox": "tsx scripts/build.ts --browser firefox",
+    "build:dev": "tsx scripts/build.ts --dev",
+    "package": "tsx scripts/package.ts",
+    "icons": "tsx scripts/render-icons.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "vitest run --config vitest.e2e.config.ts",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "screenshots": "tsx scripts/screenshots.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/chrome": "^0.3.6",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.13.0",
+    "fflate": "^0.8.3",
+    "jsdom": "^29.1.1",
+    "playwright": "^1.63.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  }
+}

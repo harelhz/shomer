@@ -1,0 +1,112 @@
+[Adblock Plus 2.0]
+! Title: Shomer base filters
+! Description: Shomer's own high-confidence filters. Compiled into the
+!   "shomer-base" ruleset. Third-party lists (EasyList, EasyPrivacy, uBlock
+!   filters, Peter Lowe's list) are downloaded and compiled at build time.
+! License: GPL-3.0-or-later
+! Homepage: https://github.com/shomer-privacy/shomer
+!
+! Syntax: https://github.com/shomer-privacy/shomer/blob/main/docs/FILTER_SYNTAX.md
+
+! ---------------------------------------------------------------------------
+! Ad networks
+! ---------------------------------------------------------------------------
+||doubleclick.net^
+||googlesyndication.com^
+||googleadservices.com^
+||adservice.google.com^
+||pagead2.googlesyndication.com^
+||adnxs.com^
+||adsrvr.org^
+||amazon-adsystem.com^
+||criteo.com^
+||criteo.net^
+||taboola.com^$third-party
+||outbrain.com^$third-party
+||pubmatic.com^
+||rubiconproject.com^
+||openx.net^
+||casalemedia.com^
+||smartadserver.com^
+||adform.net^
+||media.net^$third-party
+||yieldmo.com^
+||sharethrough.com^
+||teads.tv^
+||33across.com^
+||moatads.com^
+||adroll.com^
+||zemanta.com^
+||mgid.com^
+||revcontent.com^
+||propellerads.com^
+||popads.net^
+||adsterra.com^
+
+! ---------------------------------------------------------------------------
+! Analytics, session replay and data brokers
+! ---------------------------------------------------------------------------
+||google-analytics.com^
+||googletagmanager.com^$third-party
+||scorecardresearch.com^
+||quantserve.com^
+||hotjar.com^
+||hotjar.io^
+||fullstory.com^
+||mouseflow.com^
+||clarity.ms^
+||luckyorange.com^
+||luckyorange.net^
+||smartlook.com^
+||inspectlet.com^
+||crazyegg.com^
+||heapanalytics.com^
+||mixpanel.com^$third-party
+||segment.io^$third-party
+||amplitude.com^$third-party
+||chartbeat.com^
+||chartbeat.net^
+||newrelic.com^$third-party
+||nr-data.net^
+||bluekai.com^
+||krxd.net^
+||demdex.net^
+||omtrdc.net^
+||everesttech.net^
+||exelator.com^
+||agkn.com^
+||rlcdn.com^
+||tapad.com^
+||adsymptotic.com^
+||crwdcntrl.net^
+
+! ---------------------------------------------------------------------------
+! Social tracking pixels (widgets stay usable on their own sites)
+! ---------------------------------------------------------------------------
+||connect.facebook.net^$third-party
+||facebook.com/tr^$third-party
+||ads-twitter.com^
+||analytics.twitter.com^
+||static.ads-twitter.com^
+||snap.licdn.com^$third-party
+||px.ads.linkedin.com^
+||analytics.tiktok.com^
+||ct.pinterest.com^
+||bat.bing.com^
+
+! ---------------------------------------------------------------------------
+! Fingerprinting services
+! ---------------------------------------------------------------------------
+||fingerprintjs.com^$third-party
+||fpjs.io^
+||fpcdn.io^
+
+! ---------------------------------------------------------------------------
+! Generic cosmetic filters
+! ---------------------------------------------------------------------------
+##ins.adsbygoogle
+##.ad-banner
+##.advertisement
+##[id^="div-gpt-ad"]
+##[data-ad-slot]
+##.sponsored-content

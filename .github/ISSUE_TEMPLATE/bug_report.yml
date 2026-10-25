@@ -1,0 +1,30 @@
+name: Bug report
+description: Something in Shomer itself doesn't work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Click …
+  - type: input
+    id: version
+    attributes:
+      label: Shomer version and browser
+      placeholder: Shomer 1.0.0, Firefox 140
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Errors
+      description: Dashboard → Overview shows the last problem; the service worker console (chrome://extensions → Shomer → "service worker") may show more.
+      render: text

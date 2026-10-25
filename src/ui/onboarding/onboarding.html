@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Shomer</title>
+    <link rel="icon" href="../icons/icon-32.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="onboarding.css" />
+  </head>
+  <body>
+    <main>
+      <img src="../icons/icon-128.png" alt="" width="88" height="88" />
+      <h1>Shomer is protecting you</h1>
+      <p class="lead">שומר means “guardian”. Four layers of protection are now active on every site you visit.</p>
+
+      <section id="permission" class="permission" hidden>
+        <h2>One more step</h2>
+        <p>Your browser asks you to approve access to websites before Shomer can block ads and trackers on them.</p>
+        <button id="grant" class="btn primary">Allow Shomer on all websites</button>
+      </section>
+
+      <div class="features">
+        <article>
+          <h3>🧱 Ads &amp; trackers blocked</h3>
+          <p>EasyList, EasyPrivacy, uBlock filters and Peter Lowe’s list, compiled into fast native browser rules.</p>
+        </article>
+        <article>
+          <h3>🧠 New trackers learned</h3>
+          <p>
+            Third parties that follow you across three sites are blocked automatically, even if no list knows them yet.
+          </p>
+        </article>
+        <article>
+          <h3>🎭 Fingerprinting defeated</h3>
+          <p>Canvas, WebGL and audio readouts get invisible noise that changes every visit.</p>
+        </article>
+        <article>
+          <h3>🍪 Cookie banners rejected</h3>
+          <p>Shomer clicks “reject” for you where it can, and hides the rest. It never clicks “accept”.</p>
+        </article>
+      </div>
+
+      <p class="muted">
+        Use the toolbar icon to see what was blocked on a page or to turn Shomer off for one site. Everything else is in
+        the <a href="dashboard.html">dashboard</a>. Shomer collects no data.
+      </p>
+    </main>
+    <script src="onboarding.js"></script>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+.layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px 12px;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 4px 10px 16px;
+}
+
+.sidebar a {
+  color: var(--text-2);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.sidebar a[aria-current='page'] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+main {
+  padding: 32px 40px 64px;
+  max-width: 1000px;
+  outline: none;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+
+.lead {
+  color: var(--text-2);
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 15px;
+  margin: 28px 0 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.tile b {
+  display: block;
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.tile span {
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 18px;
+}
+
+.setting + .setting {
+  border-top: 1px solid var(--border);
+}
+
+.setting .text {
+  display: grid;
+  gap: 2px;
+}
+
+.setting .text small {
+  color: var(--text-2);
+}
+
+select,
+input[type='text'],
+input[type='search'],
+textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 320px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  padding: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+td.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.toolbar input[type='search'] {
+  flex: 1;
+  min-width: 200px;
+}
+
+.errors {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.errors li {
+  margin-bottom: 4px;
+}
+
+.notice {
+  background: var(--warn-soft);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 3px 4px 3px 12px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+.chip button {
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}
+
+.chip button:hover {
+  background: var(--border);
+}
+
+dl.about {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 24px;
+}
+
+dl.about dt {
+  color: var(--text-2);
+}
+
+dl.about dd {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    width: 100%;
+    padding-bottom: 8px;
+  }
+
+  main {
+    padding: 20px 16px 48px;
+  }
+
+  .setting {
+    flex-wrap: wrap;
+  }
+}

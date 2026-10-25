@@ -1,0 +1,33 @@
+name: Broken site
+description: A website doesn't work correctly with Shomer enabled
+labels: [broken-site]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Website address
+      placeholder: https://example.com/page
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What goes wrong?
+      description: e.g. "the video doesn't play", "the login button does nothing", "ads still show".
+    validations:
+      required: true
+  - type: checkboxes
+    id: modules
+    attributes:
+      label: Which module fixes it when turned off for this site (popup → On this site)?
+      options:
+        - label: Ads & content blocking
+        - label: Tracker learning
+        - label: Fingerprint shield
+        - label: Cookie banners
+        - label: None of them / not sure
+  - type: input
+    id: version
+    attributes:
+      label: Shomer version and browser
+      placeholder: Shomer 1.0.0, Chrome 140
