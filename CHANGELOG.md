@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] — 2026-10-25
+
+### Changed
+- Links point to the project's GitHub repository.
+- Reproducible builds: timestamps come from `releaseDate`, and the reviewer source package includes the filter-list snapshot.
+
 ## [1.0.0] — 2026-10-25
 
 ### Added

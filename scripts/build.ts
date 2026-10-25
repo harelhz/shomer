@@ -90,7 +90,7 @@ function manifest(browser: Browser): Record<string, unknown> {
     background: { scripts: ['background.js'], type: 'module' },
     browser_specific_settings: {
       gecko: {
-        id: 'shomer@harelhz.github.io',
+        id: 'shomer@shomer-privacy.github.io',
         strict_min_version: '128.0',
         data_collection_permissions: { required: ['none'] },
       },
