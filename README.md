@@ -7,7 +7,7 @@
 **An all-in-one, open-source privacy shield for Chrome and Firefox.**
 Blocks ads and trackers, learns new trackers on its own, defeats browser fingerprinting, and rejects cookie banners — in one Manifest V3 extension.
 
-[![CI](https://github.com/shomer-privacy/shomer/actions/workflows/ci.yml/badge.svg)](https://github.com/shomer-privacy/shomer/actions/workflows/ci.yml)
+[![CI](https://github.com/harelhz/shomer/actions/workflows/ci.yml/badge.svg)](https://github.com/harelhz/shomer/actions/workflows/ci.yml)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-1d4ed8)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
@@ -79,7 +79,7 @@ It is an independent implementation, written from scratch in TypeScript, built n
 > Store listings are coming. Until then, install from source — it takes a minute.
 
 ```bash
-git clone https://github.com/shomer-privacy/shomer.git
+git clone https://github.com/harelhz/shomer.git
 cd shomer
 npm ci
 npm run build          # downloads the filter lists and builds dist/chrome and dist/firefox

@@ -10,4 +10,4 @@ _Last updated: October 2026_
 - **Removing your data.** _Dashboard → Trackers → Forget learned trackers_ erases learned data; uninstalling the extension erases everything.
 - **Signals it sends on your behalf.** Shomer adds the Global Privacy Control (`Sec-GPC: 1`) and Do Not Track (`DNT: 1`) headers to your requests, which you can turn off in the dashboard.
 
-Questions: open an issue at https://github.com/shomer-privacy/shomer/issues.
+Questions: open an issue at https://github.com/harelhz/shomer/issues.

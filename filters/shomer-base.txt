@@ -4,9 +4,9 @@
 !   "shomer-base" ruleset. Third-party lists (EasyList, EasyPrivacy, uBlock
 !   filters, Peter Lowe's list) are downloaded and compiled at build time.
 ! License: GPL-3.0-or-later
-! Homepage: https://github.com/shomer-privacy/shomer
+! Homepage: https://github.com/harelhz/shomer
 !
-! Syntax: https://github.com/shomer-privacy/shomer/blob/main/docs/FILTER_SYNTAX.md
+! Syntax: https://github.com/harelhz/shomer/blob/main/docs/FILTER_SYNTAX.md
 
 ! ---------------------------------------------------------------------------
 ! Ad networks

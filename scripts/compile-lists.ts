@@ -22,6 +22,7 @@ import { assignIds } from '../src/shared/filters/dnr';
 import type { DnrRuleDraft } from '../src/shared/dnr-types';
 import { ALL_RESOURCE_TYPES } from '../src/shared/dnr-types';
 import { TRACKING_PARAMS } from '../src/data/trackers';
+import { buildDate } from './build-date';
 import { LIST_SOURCES, PSL_URLS } from './lists.config';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -140,7 +141,7 @@ async function main(): Promise<void> {
 
   const meta = {
     version: JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version as string,
-    builtAt: new Date().toISOString(),
+    builtAt: buildDate().toISOString(),
     lists: {} as Record<
       string,
       { network: number; rules: number; cosmetic: number; scriptlets: number; unsupported: number }

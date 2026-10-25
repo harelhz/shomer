@@ -161,4 +161,4 @@ export const FP_EVENT = 'shomer:fp-report';
 /** The number of distinct first-party sites a tracker must be seen on. */
 export const DEFAULT_LEARNING_THRESHOLD = 3;
 
-export const REPO_URL = 'https://github.com/shomer-privacy/shomer';
+export const REPO_URL = 'https://github.com/harelhz/shomer';

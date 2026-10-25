@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import * as esbuild from 'esbuild';
 import { RULESETS } from '../src/shared/constants';
 import { RESOURCES_DIR } from '../src/shared/filters/resources';
+import { buildDate } from './build-date';
 
 type Browser = 'chrome' | 'firefox';
 
@@ -89,7 +90,7 @@ function manifest(browser: Browser): Record<string, unknown> {
     background: { scripts: ['background.js'], type: 'module' },
     browser_specific_settings: {
       gecko: {
-        id: 'shomer@shomer-privacy.github.io',
+        id: 'shomer@harelhz.github.io',
         strict_min_version: '128.0',
         data_collection_permissions: { required: ['none'] },
       },
@@ -107,7 +108,7 @@ async function bundle(browser: Browser, out: string): Promise<void> {
     logLevel: 'warning',
     define: {
       __VERSION__: JSON.stringify(pkg.version),
-      __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+      __BUILD_TIME__: JSON.stringify(buildDate().toISOString()),
       __BROWSER__: JSON.stringify(browser),
     },
   };

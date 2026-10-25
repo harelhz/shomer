@@ -1,13 +1,14 @@
 {
   "name": "shomer",
   "version": "1.0.0",
+  "releaseDate": "2026-10-25T00:00:00Z",
   "description": "All-in-one privacy shield: blocks ads and trackers, learns new trackers, defeats fingerprinting and rejects cookie banners.",
   "private": true,
   "type": "module",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shomer-privacy/shomer.git"
+    "url": "https://github.com/harelhz/shomer.git"
   },
   "keywords": [
     "browser-extension",
@@ -37,7 +38,8 @@
     "test:watch": "vitest",
     "test:e2e": "vitest run --config vitest.e2e.config.ts",
     "check": "npm run typecheck && npm run lint && npm test",
-    "screenshots": "tsx scripts/screenshots.ts"
+    "screenshots": "tsx scripts/screenshots.ts",
+    "build:reproducible": "tsx scripts/compile-lists.ts --offline && tsx scripts/build.ts && tsx scripts/package.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

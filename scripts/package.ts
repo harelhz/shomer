@@ -6,6 +6,7 @@ import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'n
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { zipSync } from 'fflate';
+import { buildDate } from './build-date';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const { version } = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
@@ -25,7 +26,7 @@ for (const browser of ['chrome', 'firefox']) {
   const dir = join(ROOT, 'dist', browser);
   const files: Record<string, Uint8Array> = {};
   collect(dir, dir, files);
-  const zip = zipSync(files, { level: 9, mtime: new Date('2026-01-01T00:00:00Z') });
+  const zip = zipSync(files, { level: 9, mtime: buildDate() });
   const target = join(ROOT, 'artifacts', `shomer-${browser}-${version}.zip`);
   writeFileSync(target, zip);
   console.log(`${relative(ROOT, target)}  ${(zip.length / 1024 / 1024).toFixed(2)} MiB`);
