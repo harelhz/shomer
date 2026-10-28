@@ -2,7 +2,7 @@
  * Zips dist/<browser> into artifacts/shomer-<browser>-<version>.zip, ready for
  * the Chrome Web Store and addons.mozilla.org.
  */
-import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { zipSync } from 'fflate';
@@ -22,12 +22,24 @@ function collect(dir: string, base: string, out: Record<string, Uint8Array>): vo
 }
 
 mkdirSync(join(ROOT, 'artifacts'), { recursive: true });
+let packaged = 0;
 for (const browser of ['chrome', 'firefox']) {
   const dir = join(ROOT, 'dist', browser);
+  // `npm run build:chrome` only builds one browser; package whatever exists.
+  if (!existsSync(dir)) {
+    console.log(`Skipping ${browser}: ${relative(ROOT, dir)} not found (run \`npm run build:${browser}\` first).`);
+    continue;
+  }
   const files: Record<string, Uint8Array> = {};
   collect(dir, dir, files);
   const zip = zipSync(files, { level: 9, mtime: buildDate() });
   const target = join(ROOT, 'artifacts', `shomer-${browser}-${version}.zip`);
   writeFileSync(target, zip);
   console.log(`${relative(ROOT, target)}  ${(zip.length / 1024 / 1024).toFixed(2)} MiB`);
+  packaged++;
+}
+
+if (packaged === 0) {
+  console.error('Nothing to package: build the extension first (`npm run build`).');
+  process.exit(1);
 }
